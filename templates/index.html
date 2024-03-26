@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industrial Control System</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.5/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <!-- System Use Notification Modal -->
+    <div class="modal fade" id="systemUseModal" tabindex="-1" role="dialog" aria-labelledby="systemUseModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="systemUseModalLabel">System Use Notification</h5>
+                </div>
+                <div class="modal-body">
+                    <p>System usage may be monitored, recorded, and subject to audit. Unauthorized use of the system is prohibited and subject to criminal and civil penalties. Use of the system indicates consent to monitoring and recording.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Acknowledge</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container text-center">
+        <h1 class="mb-4">Industrial Control System Monitoring Tool</h1>
+        <p>Please register or sign in to access the system.</p>
+        <a href="/login" class="btn btn-primary">Login</a>
+        <a href="/register" class="btn btn-secondary">Register</a>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            // Show the system use notification modal immediately when the page loads
+            $('#systemUseModal').modal('show');
+        });
+    </script>
+</body>
+</html>

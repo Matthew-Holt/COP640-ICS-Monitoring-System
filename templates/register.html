@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Adapt to mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Industrial Control System</title>
+    <!-- Bootstrap CSS for styling -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f5f5f5;
+        }
+        /* Style the registration form */
+        .form-register {
+            width: 100%;
+            max-width: 420px;
+            padding: 15px;
+            margin: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        /* Additional styling for form elements */
+        .form-register .form-control {
+            position: relative;
+            height: auto;
+            padding: 10px;
+            font-size: 16px;
+        }
+        .form-check-label {
+            margin-top: 5px;
+        }
+        .form-register input[type="submit"] {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form class="form-register" action="/register" method="post">
+        <h2 class="h3 mb-3 font-weight-normal">Please Register</h2>
+        <!-- Input field for username -->
+        <label for="username" class="sr-only">Username</label>
+        <input type="text" id="username" name="username" class="form-control" placeholder="Username" required autofocus>
+        
+        <!-- Input field for password -->
+        <label for="password" class="sr-only">Password</label>
+        <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+        
+        <!-- Checkbox to opt-in for admin privileges -->
+        <div class="form-check mb-3">
+            <input type="checkbox" id="admin" name="admin" class="form-check-input">
+            <label for="admin" class="form-check-label">Check this box to give user Admin privileges</label>
+        </div>
+        
+        <!-- Submit button -->
+        <input type="submit" value="Register" class="btn btn-lg btn-primary btn-block">
+    </form>
+</body>
+</html>

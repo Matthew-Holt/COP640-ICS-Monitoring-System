@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <!-- Bootstrap CSS for styling -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+    {% include 'navbar.html' %}
+    <div class="container mt-5">
+        <h1 class="mb-4">ICS Dashboard</h1>
+        <!-- Display a welcome message to the signed in user-->
+        <div class="alert alert-info" role="alert">
+            <strong>Welcome, {{ username }}!</strong>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <!-- Conditional statement to display the last login time or a message for first-time users -->
+                {% if last_login %}
+                    <p class="card-text">Last login: {{ last_login }}</p>
+                {% else %}
+                    <p class="card-text">This is your first login.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

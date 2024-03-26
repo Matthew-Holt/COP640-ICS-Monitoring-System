@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Industrial Control System</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .admin-form {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .admin-form h2 {
+            margin-bottom: 20px;
+        }
+        .admin-form .form-group {
+            margin-bottom: 15px;
+        }
+        .admin-form input,
+        .admin-form button {
+            height: 38px;
+            padding: 6px 12px;
+        }
+        .admin-form button {
+            width: 100%;
+            margin-top: 10px;
+        }
+        .access-denied {
+            max-width: 600px;
+            margin: 50px auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div class="container mt-5">
+        {% if is_admin %}
+        <div class="admin-form">
+            <h2>Admin Environmental Data Submission</h2>
+            <form action="/admin_panel" method="post">
+                <div class="form-group">
+                    <label for="temperature">Temperature (°C):</label>
+                    <input type="number" class="form-control" name="temperature" id="temperature" placeholder="Enter temperature" required>
+                </div>
+                <div class="form-group">
+                    <label for="humidity">Humidity (%):</label>
+                    <input type="number" class="form-control" name="humidity" id="humidity" placeholder="Enter humidity" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        {% else %}
+        <div class="access-denied">
+            <p class="alert alert-danger">Access Denied</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

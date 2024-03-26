@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Environmental Results</title>
+    <!-- Bootstrap CSS for styling -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Additional styling for the page content */
+        body {
+            background-color: #f4f4f4;
+        }
+        .result-container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .result-header {
+            margin-bottom: 20px;
+        }
+        .submission {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+        }
+    </style>
+    <script>
+        // JavaScript function to fetch and refresh the sensor data every hour
+        function refreshReadings() {
+            fetch('/ics')
+                .then(response => response.text())
+                .then(html => {
+                    var parser = new DOMParser();
+                    var doc = parser.parseFromString(html, 'text/html');
+                    document.getElementById('temperature').innerHTML = doc.getElementById('temperature').innerHTML;
+                    document.getElementById('humidity').innerHTML = doc.getElementById('humidity').innerHTML;
+                })
+                .catch(err => console.error('Failed to fetch new readings:', err));
+        }
+        // Set an interval to execute the refreshReadings function every 3600000 milliseconds (1 hour)
+        setInterval(refreshReadings, 3600000);
+    </script>
+</head>
+<body>
+    <!-- Navigation bar -->
+    {% include 'navbar.html' %}
+    <div class="container mt-5">
+        <div class="result-container">
+            <h1 class="result-header">Environmental Results - ICS Sensor Readings</h1>
+            <p class="lead">Live Sensor Data:</p>
+            <!-- Displaying the live sensor data for temperature and humidity -->
+            <p>Temperature: <span id="temperature">{{ temperature }}°C</span></p>
+            <p>Humidity: <span id="humidity">{{ humidity }}%</span></p>
+            <hr>
+            <h2 class="result-header">Manual Submissions</h2>
+            <!-- Looping through and displaying each manual submission -->
+            {% for submission in manual_submissions %}
+            <div class="submission">
+                Temperature: {{ submission.temperature }}°C, 
+                Humidity: {{ submission.humidity }}% - <em>Submitted by Admin</em>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICS Cloud Services</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f4f4f4;
+        }
+        .content-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+        .service-item {
+            background-color: #e9ecef;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .contact-info a {
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div class="container mt-5">
+        <div class="content-container">
+            <h1 class="mb-4">ICS Cloud Services</h1>
+            <p class="lead">Enhance your Industrial Control System monitoring with our robust cloud solutions.</p>
+
+            <section id="services" class="mb-5">
+                <h2>Our Services</h2>
+                <p>Discover the range of cloud services designed to increase the efficiency and reliability of your ICS monitoring:</p>
+                <div class="service-item">Real-time Monitoring: Access real-time data and analytics from anywhere, ensuring your ICS operates at peak efficiency.</div>
+                <div class="service-item">Data Storage Solutions: Securely store vast amounts of data with our scalable cloud storage options.</div>
+                <div class="service-item">Automated Backups: Protect your critical ICS data with automated backups, ensuring data integrity and availability.</div>
+                <div class="service-item">Custom Integration Services: Seamlessly integrate our cloud services with your existing ICS infrastructure for a tailored solution.</div>
+                <div class="service-item">24/7 Support: Our expert team is available around the clock to support your cloud service needs and ensure your system's uninterrupted operation.</div>
+            </section>
+
+            <section id="contact-us">
+                <h2>Contact Us</h2>
+                <div class="contact-info">
+                    <p>Email: <a href="mailto:support@icscloudservices.com">support@services.com</a></p>
+                    <p>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>

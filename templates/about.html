@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - ICS Monitoring System</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f4f4f4;
+        }
+        .content-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+        h2 {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div class="container mt-5">
+        <div class="content-container">
+            <h1>About the ICS Monitoring System</h1>
+            <p>This site is designed to provide comprehensive monitoring and management for Industrial Control Systems. Here's what you can do on each page:</p>
+            
+            <h2>Index</h2>
+            <p>The landing page of our website. Here, visitors are greeted and directed to either log in or register to access the ICS monitoring system.</p>
+            
+            <h2>Register</h2>
+            <p>New users can create an account on this page to gain access to the ICS monitoring system, with the option to register as an administrator for full system control.</p>
+            
+            <h2>Login</h2>
+            <p>Users can securely log into their accounts on this page to access personalized system insights and capabilities based on their user role.</p>
+            <P>Usernames and passwords are stored in a SQLite database. The passwords are encrypted for added security.</P>
+            
+            <h2>Home (Dashboard)</h2>
+            <p>The dashboard is your central hub for system status and alerts. Here, you'll find an overview of your ICS's current state, including any critical notifications.</p>
+            
+            <h2>ICS Environmental Results</h2>
+            <p>The ICS page offers real-time monitoring of environmental results such as temperature and humidity. It also displays manual submissions by administrative users for historical data comparison.</p>
+            
+            <h2>Cloud Services</h2>
+            <p>Discover our cloud-based solutions on this page, designed to enhance your ICS monitoring through additional data storage, backup, and real-time analysis capabilities.</p>
+            <p>This page lists additional cloud services that may be offered t ICS monitoring system customers.</p>
+            
+            <h2>Admin Panel</h2>
+            <p>Accessible only to administrators, this section allows for the manual input of environmental variables, such as temperature and humidity readings, into the system.</p> 
+        </div>
+    </div>
+</body>
+</html>
